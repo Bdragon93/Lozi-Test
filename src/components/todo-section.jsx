@@ -1,20 +1,16 @@
 import React from 'react';
-import TodoList from './todo-list.jsx'
-import CreateItem from './create-item.jsx'
-import GeneralAction from './general-action.jsx'
+import TodoList from './todo-list.jsx';
+import CreateItem from './create-item.jsx';
+import GeneralAction from './general-action.jsx';
 
 var TodoSection = React.createClass({
-	changeState: function(newState) {
-		this.props.changeState(newState);
-	},
-
 	createTask: function(taskName) {
 		var tempState = this.props.listTask;
 		tempState.push({
 			task: taskName,
 			isDone: false
 		});
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	allDone: function() {
@@ -22,31 +18,31 @@ var TodoSection = React.createClass({
 		tempState.map(function(task, index) {
 			task.isDone = true;
 		});
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	deleteAll: function() {
 		var tempState = this.props.listTask;
 		tempState = [];
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	taskDone: function(index) {
 		var tempState = this.props.listTask;
 		tempState[index].isDone = true;
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	taskTodo: function(index) {
 		var tempState = this.props.listTask;
 		tempState[index].isDone = false;
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	deleteTask: function(index) {
 		var tempState = this.props.listTask;
 		tempState.splice(index, 1);
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	ascSort: function() {
@@ -60,7 +56,7 @@ var TodoSection = React.createClass({
 			}
 			return 0;
 		});
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	descSort: function() {
@@ -74,7 +70,7 @@ var TodoSection = React.createClass({
 			}
 			return 0;
 		});
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	shuffleList: function() {
@@ -86,12 +82,12 @@ var TodoSection = React.createClass({
 			tempState[i - 1] = tempState[j];
 			tempState[j] = x;
     	}
-		this.changeState(tempState)
+		this.props.changeState(tempState)
 	},
 
 	render: function() {
 		return (
-			<section>
+			<section className='hafl-width pull-left'>
 				<h2>Todo Section</h2>
 				<CreateItem createTask={this.createTask} />
 				<TodoList

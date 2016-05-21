@@ -8,15 +8,24 @@ var FilterAction = React.createClass({
 	render: function() {
 		return (
 			<footer>
-				<ul>
-					<li>
-						<a href='javascript:;' onClick={this.onChangeFilter.bind(this,null)} >All</a>
+				<ul className='action-outer'>
+					<li className='action-item'>
+						<a className={this.props.filter === null ? 'btn-action selected-filter' : 'btn-action'}
+							href='javascript:;' onClick={this.onChangeFilter.bind(this,null)} >
+							All
+						</a>
 					</li>
-					<li>
-						<a href='javascript:;' onClick={this.onChangeFilter.bind(this,true)} >Done</a>
+					<li className='action-item'>
+						<a className={this.props.filter === true ? 'btn-action selected-filter' : 'btn-action'}
+							href='javascript:;' onClick={this.onChangeFilter.bind(this,true)} >
+							Done
+						</a>
 					</li>
-					<li>
-						<a href='javascript:;' onClick={this.onChangeFilter.bind(this,false)} >To do</a>
+					<li className='action-item'>
+						<a className={this.props.filter === false ? 'btn-action selected-filter' : 'btn-action'}
+							href='javascript:;' onClick={this.onChangeFilter.bind(this,false)} >
+							To do
+						</a>
 					</li>
 				</ul>
 			</footer>

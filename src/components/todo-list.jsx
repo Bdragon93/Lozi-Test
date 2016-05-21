@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoItem from './todo-item.jsx'
+import TodoItem from './todo-item.jsx';
 
 var TodoList = React.createClass({
 	renderItem: function() {

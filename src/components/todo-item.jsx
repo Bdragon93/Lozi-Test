@@ -27,9 +27,10 @@ var TodoList = React.createClass({
 	},
 
 	render: function () {
+		var task = this.props.item;
 		return (
 			<tr>
-				<td>{this.props.item.task}</td>
+				<td className={task.isDone ? 'task-done' : null}>{task.task}</td>
 				<td>
 					{this.renderAction()}
 					<button onClick={this.onDelete} >Delete</button>

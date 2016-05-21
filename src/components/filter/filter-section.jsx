@@ -1,7 +1,7 @@
 import React from 'react';
-import TodoList from '../todo-list.jsx'
-import CreateItem from '../create-item.jsx'
-import FilterAction from './filter-action.jsx'
+import TodoList from '../todo-list.jsx';
+import CreateItem from '../create-item.jsx';
+import FilterAction from './filter-action.jsx';
 
 var FilterSection = React.createClass({
 	count: 0,
@@ -12,35 +12,11 @@ var FilterSection = React.createClass({
 		};
 	},
 
-	// componentWillUpdate: function(nextProps, nextState) {
-	// 	var self = this;
-	// 	// var filterState = self.state.filter;
-	// 	if (nextState.filter === 'Done') {
-	// 		var tempState = [];
-	// 		nextProps.listTask.map(function(item, index) {
-	// 			if (item.isDone === true) {
-	// 				tempState.push(item);
-	// 			};
-	// 		});
-	// 		self.setState({
-	// 			listTask: tempState
-	// 		});
-	// 	} else if (nextState.filter === 'Todo') {
-	// 		var tempState = [];
-	// 		nextProps.listTask.map(function(item, index) {
-	// 			if (item.isDone === false) {
-	// 				tempState.push(item);
-	// 			};
-	// 		});
-	// 		self.setState({
-	// 			listTask: tempState
-	// 		});
-	// 	} else {
-	// 		self.setState({
-	// 			listTask: nextProps.listTask
-	// 		});
-	// 	};
-	// },
+	componentWillReceiveProps: function(nextProps) {
+		this.setState({
+			listTask: nextProps.listTask
+		});
+	},
 
 	renderItem: function() {
 		var self = this;
@@ -67,7 +43,7 @@ var FilterSection = React.createClass({
 
 	render: function() {
 		return (
-			<section>
+			<section className='hafl-width pull-left'>
 				<h2>Filter Section</h2>
 				<table>
 					<thead>
@@ -80,7 +56,10 @@ var FilterSection = React.createClass({
 					</tbody>
 				</table>
 				<p>Number of tasks: {this.count}</p>
-				<FilterAction changeFilter={this.changeFilter} />
+				<FilterAction
+					changeFilter={this.changeFilter}
+					filter={this.state.filter}
+				/>
 			</section>
 		)
 	}

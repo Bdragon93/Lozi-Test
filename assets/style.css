@@ -1,0 +1,39 @@
+/* site */
+.hafl-width {
+	width: 50%;
+}
+
+.pull-left{
+	float: left;
+}
+
+/* action */
+.action-item {
+	display: inline;
+}
+
+.btn-action {
+	text-decoration: none;
+	color: inherit;
+	padding: 5px;
+	border: 1px solid gray;
+	margin: 0 5px;
+}
+
+.btn-action:hover {
+	border: 1px solid rgba(175, 47, 47, 0.1);
+}
+
+.btn-action:focus {
+	border: 1px solid blue;
+}
+
+.selected-filter {
+	border: 1px solid blue;
+}
+
+/* task */
+.task-done {
+	color: gray;
+	text-decoration: line-through;
+}

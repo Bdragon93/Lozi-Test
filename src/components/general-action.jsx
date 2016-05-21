@@ -24,23 +24,23 @@ var GeneralAction = React.createClass({
 	render: function() {
 		return (
 			<footer>
-				<ul>
-					<li>
-						<a href='javascript:;' onClick={this.onAllDone} >All done</a>
+				<ul className='action-outer'>
+					<li className='action-item'>
+						<a className='btn-action' href='javascript:;' onClick={this.onAllDone} >All done</a>
 					</li>
-					<li>
-						<a href='javascript:;' onClick={this.onDeleteAll} >Delete all</a>
+					<li className='action-item'>
+						<a className='btn-action' href='javascript:;' onClick={this.onDeleteAll} >Delete all</a>
 					</li>
 				</ul>
-				<ul>
-					<li>
-						<a href='javascript:;' onClick={this.onAscSort} >Asc Sort</a>
+				<ul className='action-outer'>
+					<li className='action-item'>
+						<a className='btn-action' href='javascript:;' onClick={this.onAscSort} >Asc Sort</a>
 					</li>
-					<li>
-						<a href='javascript:;' onClick={this.onDescSort} >Desc Sort</a>
+					<li className='action-item'>
+						<a className='btn-action' href='javascript:;' onClick={this.onDescSort} >Desc Sort</a>
 					</li>
-					<li>
-						<a href='javascript:;' onClick={this.onShuffle} >Shuffle</a>
+					<li className='action-item'>
+						<a className='btn-action' href='javascript:;' onClick={this.onShuffle} >Shuffle</a>
 					</li>
 				</ul>
 			</footer>
