@@ -1,16 +1,8 @@
 import React from 'react';
 
 var FilterAction = React.createClass({
-	onShowALl: function() {
-		this.props.allDone();
-	},
-
-	onShowDone: function() {
-		this.props.deleteAll();
-	},
-
-	onShowTodo: function() {
-		this.props.ascSort();
+	onChangeFilter: function(filter) {
+		this.props.changeFilter(filter);
 	},
 
 	render: function() {
@@ -18,13 +10,13 @@ var FilterAction = React.createClass({
 			<footer>
 				<ul>
 					<li>
-						<a href='javascript:;' onClick={this.onShowALl} >All</a>
+						<a href='javascript:;' onClick={this.onChangeFilter.bind(this,null)} >All</a>
 					</li>
 					<li>
-						<a href='javascript:;' onClick={this.onShowDone} >Done</a>
+						<a href='javascript:;' onClick={this.onChangeFilter.bind(this,true)} >Done</a>
 					</li>
 					<li>
-						<a href='javascript:;' onClick={this.onShowTodo} >To do</a>
+						<a href='javascript:;' onClick={this.onChangeFilter.bind(this,false)} >To do</a>
 					</li>
 				</ul>
 			</footer>

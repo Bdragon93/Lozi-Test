@@ -5,13 +5,13 @@ var TodoList = React.createClass({
 	renderItem: function() {
 		var self = this;
 		return (self.props.listTask.map(function(item, i) {
-           return (<TodoItem key={i} item={item} index={i}
-           				taskDone={self.props.taskDone}
+			return (<TodoItem key={i} item={item} index={i}
+					taskDone={self.props.taskDone}
 						taskTodo={self.props.taskTodo}
 						deleteTask={self.props.deleteTask}
-           			/>
-           	);
-        }))
+					/>
+			);
+		}))
 	},
 
 	render: function() {
