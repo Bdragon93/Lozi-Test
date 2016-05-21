@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TodoList from './todo-list.jsx'
 import CreateItem from './create-item.jsx'
 import GeneralAction from './general-action.jsx'
@@ -96,6 +95,18 @@ var App = React.createClass({
 		this.setState(tempState);
 	},
 
+	shuffleList: function() {
+		var tempState = this.state.todos;
+		var j, x, i;
+		for (i = tempState.length; i; i -= 1) {
+			j = Math.floor(Math.random() * i);
+			x = tempState[i - 1];
+			tempState[i - 1] = tempState[j];
+			tempState[j] = x;
+    	}
+		this.setState(tempState);
+	},
+
 	render: function() {
 		return (
 			<div>
@@ -112,6 +123,7 @@ var App = React.createClass({
 					deleteAll={this.deleteAll}
 					ascSort={this.ascSort}
 					descSort={this.descSort}
+					shuffleList={this.shuffleList}
 				/>
 			</div>
 		)

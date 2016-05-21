@@ -18,7 +18,7 @@ var GeneralAction = React.createClass({
 	},
 
 	onShuffle: function() {
-		this.props.shuffle();
+		this.props.shuffleList();
 	},
 
 	render: function() {
