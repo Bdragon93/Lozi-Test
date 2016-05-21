@@ -19,7 +19,8 @@ var CreateItem = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<input ref='newTaskInput'
+				<input
+					ref='newTaskInput'
 					placeholder='Enter the new task...'
 					onKeyDown={this.handleCreateKey}
 					onChange={this.handleChange}
