@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoSection from './todo-section.jsx';
+import TodoSection from './todolist/todo-section.jsx';
 import FilterSection from './filter/filter-section.jsx';
 
 const data = [

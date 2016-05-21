@@ -1,6 +1,4 @@
 import React from 'react';
-import TodoList from '../todo-list.jsx';
-import CreateItem from '../create-item.jsx';
 import FilterAction from './filter-action.jsx';
 
 var FilterSection = React.createClass({
