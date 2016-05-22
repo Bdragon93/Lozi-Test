@@ -9,3 +9,7 @@ TodoMVC application built with Webpack & Reactjs.
 ## Run 
     
     webpack-dev-server
+
+## Testing
+
+    http://localhost:8080/
